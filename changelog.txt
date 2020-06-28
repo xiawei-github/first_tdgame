@@ -1,16 +1,6 @@
-mainwindow.cpp文件：在构造函数中修改了按钮的位置。
-
-mybutton.cpp文件：在构造函数中修改了按钮图片的大小。
-
-tower.cpp文件：在构造函数中修改了防御塔图片的大小。
-
-新建一个类MyButton2
-mybutton2.h文件：添加<QPushButton>头文件，写一个构造函数MyButton2。
-mybutton2.cpp文件：添加<QPixmap>和<QPropertyAnimation>。
-                                   完成构造函数的实现，放入图片，设置图形大小。
-
-mywindow.h文件：将set_tower函数改为8个set_tower函数：set_tower1到set_tower8，用于创建8个不同位置的防御塔。
-mywindow.cpp文件：添加"mybutton2.h"和<QPixmap>头文件。
-                                   在构造函数中改变返回按钮的位置，将MyButton类型的对象setTower改为8个MyButton2类型的对象：setTower1到setTower8，分别在不同位置，用于                                     控制防御塔的创建，其中每一个对象的相关操作与之前的对象setTower类似。
-                                   在paintEvent函数中添加地图图片。
-                                   除去set_tower函数，完成set_tower1函数到set_tower8函数的实现，与之前set_tower函数类似。
+新增一个子弹类（Bullet），用于防御塔发射子弹对敌人造成伤害。
+新增两个防御塔类（Tower和Tower2），一个用于攻击敌人造成伤害，另一个用于使敌人减速。
+新增一个防御塔位置类（TowerPosition），用于存储位置并标记该位置与防御塔位置之间的关系。
+新增一个路线点类（WayPoint），用于存储每一个转弯点、开始位置和终止位置的坐标点。
+在敌人类（Enemy2）中完成发射子弹相关函数的实现。
+在MyWindow类的函数中设置不同关卡对应的内容，实现创建、升级和拆除防御塔，设置不同批次的敌人，判断输赢等。
